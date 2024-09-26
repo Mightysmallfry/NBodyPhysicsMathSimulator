@@ -9,8 +9,6 @@
 namespace Comet
 {
 
-
-
     class CBody
     {
     public:
@@ -19,16 +17,27 @@ namespace Comet
 
         CBody(std::string name) : name_(name) {}
 
-        CBody(std::string name, float mass, CVector position)
-            : name_(name), mass_(mass), position_(position) {}
+        CBody(std::string name, BodyType bodyType)
+            : name_(name), bodyType_(bodyType) {}
+
+        CBody(std::string name, BodyType bodyType, double mass)
+            : name_(name), bodyType_(bodyType), mass_(mass) {}
+
+        CBody(std::string name, BodyType bodyType, double mass, CVector position)
+            : name_(name), bodyType_(bodyType), mass_(mass), position_(position) {}
 
 
         std::string ToString() const;
 
+        bool operator==(const CBody other) const;
+
+        inline std::string GetId() const { return name_; }
+
+
     private:
 
         std::string name_{ "Ophiuchus" };
-        BodyType bodyType_{ BodyType::Singularity };
+        BodyType bodyType_{ BodyType::Planet };
 
 
         double mass_{ 1.0f };
@@ -36,4 +45,6 @@ namespace Comet
         CVector position_{ZERO_VECTOR};
         CVector netForce_{ZERO_VECTOR};
     };
+
+
 }

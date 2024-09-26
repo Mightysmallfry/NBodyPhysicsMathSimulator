@@ -28,6 +28,12 @@
     <ClCompile Include="BodyType.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
+    <ClCompile Include="CSim.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CForces.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CVector.h">
@@ -40,6 +46,12 @@
       <Filter>Modules</Filter>
     </ClInclude>
     <ClInclude Include="CConstants.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="CSim.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CForces.h">
       <Filter>Modules</Filter>
     </ClInclude>
   </ItemGroup>

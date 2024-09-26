@@ -104,6 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -129,6 +130,8 @@
   <ItemGroup>
     <ClCompile Include="BodyType.cpp" />
     <ClCompile Include="CBody.cpp" />
+    <ClCompile Include="CForces.cpp" />
+    <ClCompile Include="CSim.cpp" />
     <ClCompile Include="CVector.cpp" />
     <ClCompile Include="PhysicsMathCalculator.cpp" />
   </ItemGroup>
@@ -136,6 +139,8 @@
     <ClInclude Include="BodyType.h" />
     <ClInclude Include="CBody.h" />
     <ClInclude Include="CConstants.h" />
+    <ClInclude Include="CForces.h" />
+    <ClInclude Include="CSim.h" />
     <ClInclude Include="CVector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
