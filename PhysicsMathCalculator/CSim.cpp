@@ -20,7 +20,7 @@ namespace Comet
 
     void CSim::AddBody(CBody& cbody)
     {
-        bodyRegistry_.insert(std::make_pair(cbody.GetId(), cbody));
+        bodyRegistry_.insert({ cbody.GetId(), cbody });
     }
 
     void CSim::RemoveBody(CBody& cbody)
@@ -29,6 +29,48 @@ namespace Comet
         {
             bodyRegistry_.erase(cbody.GetId());
         }
+    }
+
+    void CSim::Update()
+    {
+        //Update Body positions
+        UpdatePositions();
+
+        //Update the distances between bodies
+        UpdateDistances();
+
+        //Update forces
+        UpdateForces();
+    }
+
+    void CSim::UpdatePositions()
+    {
+
+    }
+
+    void CSim::UpdateDistances()
+    {
+        for (std::pair<std::string, CBody> bodyOne : bodyRegistry_)
+        {
+            for (std::pair<std::string, CBody> bodyTwo : bodyRegistry_)
+            {
+                if (bodyOne.second != bodyTwo.second && !distanceRegistry_.contains(std::make_pair(bodyOne.second, bodyTwo.second))
+                    && !distanceRegistry_.contains(std::make_pair(bodyTwo.second, bodyOne.second)))
+                {
+                    double distanceBetweenBodies = Distance(bodyOne.second.GetPosition(), bodyTwo.second.GetPosition());
+                    distanceRegistry_.insert({ { bodyOne.second, bodyTwo.second }, distanceBetweenBodies });
+                }
+            }
+        }
+
+
+    }
+
+    void CSim::UpdateForces()
+    {
+
+
+
     }
 }
     

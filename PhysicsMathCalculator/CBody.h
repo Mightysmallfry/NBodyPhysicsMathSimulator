@@ -32,6 +32,9 @@ namespace Comet
         bool operator==(const CBody other) const;
 
         inline std::string GetId() const { return name_; }
+        inline BodyType GetBodyType() const { return bodyType_; }
+        inline double GetMass() const { return mass_; }
+        inline CVector GetPosition() const { return position_; }
 
 
     private:
@@ -47,4 +50,16 @@ namespace Comet
     };
 
 
+}
+
+namespace std {
+    template<>
+    struct hash<Comet::CBody> {
+        std::size_t operator()(const Comet::CBody& body) const {
+            std::size_t hashValue = std::hash<std::string>()(body.GetId()); // Hash the ID
+            // Combine with bodyType hashes //These do not uniquely identify the bodies
+            //hashValue ^= std::hash<int>()(static_cast<int>(body.GetBodyType())) + 0x9e3779b9 + (hashValue << 6) + (hashValue >> 2);
+            return hashValue;
+        }
+    };
 }

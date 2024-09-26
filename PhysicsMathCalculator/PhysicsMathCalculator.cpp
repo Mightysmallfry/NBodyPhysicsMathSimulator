@@ -7,7 +7,7 @@
 
 using namespace Comet;
 
-void main()
+int main()
 {
 
     CBody object0("Ophiuchus", BodyType::Singularity, 100.0, CVector(0.0 , 0.0, 1000));

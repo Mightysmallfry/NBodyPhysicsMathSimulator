@@ -21,6 +21,6 @@ namespace Comet
     //If they're named the same then they should be the same, this means it is case sensitive
     bool CBody::operator==(const CBody other) const
     {
-        return (name_ == other.name_);
+        return (GetId() == other.GetId());
     }
 }
