@@ -2,6 +2,7 @@
 #include "CBody.h"
 #include "CVector.h"
 #include "CForces.h"
+#include "CConstants.h"
 
 #include <string>
 #include <iostream>
@@ -39,14 +40,17 @@ namespace Comet
 
     private:
 
+        double simStart{ 0.0 };
+        double deltaTime{ 1.0 };
+        double simDuration{ 20.0 };
+
+
+
         std::unordered_map<std::string, CBody> bodyRegistry_;
 
         //Uses the pair of bodies as the Id
         std::unordered_map<std::pair<CBody, CBody>, double, pair_hash> distanceRegistry_;
 
-
-        //In an adjacency list, they would all be adjacent unless the distance is small enough (SOI)
-        //So, have a 
 
     };
 }

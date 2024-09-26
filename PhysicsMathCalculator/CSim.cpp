@@ -14,7 +14,7 @@ namespace Comet
         {
             ss << entry.second.ToString() << "\n";
         }
-
+            
         return ss.str();
     }
 
@@ -54,11 +54,12 @@ namespace Comet
         {
             for (std::pair<std::string, CBody> bodyTwo : bodyRegistry_)
             {
-                if (bodyOne.second != bodyTwo.second && !distanceRegistry_.contains(std::make_pair(bodyOne.second, bodyTwo.second))
-                    && !distanceRegistry_.contains(std::make_pair(bodyTwo.second, bodyOne.second)))
+                if (bodyOne.second != bodyTwo.second && !distanceRegistry_.contains({ bodyOne.second, bodyTwo.second })
+                    && !distanceRegistry_.contains({ bodyTwo.second, bodyOne.second }))
                 {
                     double distanceBetweenBodies = Distance(bodyOne.second.GetPosition(), bodyTwo.second.GetPosition());
                     distanceRegistry_.insert({ { bodyOne.second, bodyTwo.second }, distanceBetweenBodies });
+                    
                 }
             }
         }
@@ -68,6 +69,10 @@ namespace Comet
 
     void CSim::UpdateForces()
     {
+        //If the force is neglible, we can just remove the relationship, without applying the force.
+
+        //Check each relationship's gravitational force, if large enough add the force
+        //Regardless remove the relationship from the distance directory afterwards.
 
 
 

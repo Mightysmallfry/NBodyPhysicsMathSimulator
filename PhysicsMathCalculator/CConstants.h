@@ -27,7 +27,7 @@ namespace Comet
 	static constexpr double UNIVERSAL_GRAVITATIONAL_CONSTANT{.00000000006673};
 	//Gravitational constant: 6.67384 * 10^-11 Nm^2/kg^2
 
-
+	static constexpr double NEGLIGIBLE_GRAVITY_DISTANCE_PLACEHOLDER{ 1000 };
 
 
 
