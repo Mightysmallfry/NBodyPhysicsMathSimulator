@@ -7,7 +7,6 @@
 namespace Comet
 {
 	class CVector;
-	class CMatrix;
 
 	//--- MATH CONSTANTS
 	static constexpr double TOLERANCE{DBL_EPSILON};

@@ -2,18 +2,16 @@
 //
 
 #include <iostream>
-#include "CVector.h"
+#include "CConstants.h"
+#include "CBody.h"
 
 using namespace Comet;
 
-int main()
+void main()
 {
 
+    CBody objectO("Ophiuchus", 1.0, CVector(0.0 , 0.0, 1000));
 
-    CVector* xDirection = new CVector(1.0, 0, 0);
-
-    std::cout << xDirection->ToString() << "\n";
-
-
+    std::cout << objectO.ToString();
 
 }

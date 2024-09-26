@@ -127,11 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BodyType.cpp" />
     <ClCompile Include="CBody.cpp" />
     <ClCompile Include="CVector.cpp" />
     <ClCompile Include="PhysicsMathCalculator.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BodyType.h" />
     <ClInclude Include="CBody.h" />
     <ClInclude Include="CConstants.h" />
     <ClInclude Include="CVector.h" />

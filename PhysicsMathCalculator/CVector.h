@@ -6,11 +6,7 @@
 
 namespace Comet
 {
-    class CVector;
-
-
-    //Use this function in order to get a unit vector of the parameter without changing the parameter
-    CVector NormalizedVector(const CVector& vector);
+    //class CVector;
 
     
     class CVector
@@ -78,5 +74,10 @@ namespace Comet
     CVector CreateVector(const CVector& start, const CVector& end);
     double DistanceSquared(const CVector& vector1, const CVector& vector2);
     double Distance(const CVector& vector1, const CVector& vector2);
+
+    //Use this function in order to get a unit vector of the parameter without changing the parameter
+    CVector NormalizedVector(const CVector& vector);
+
+
 }
 #endif // COMET_VECTOR_H

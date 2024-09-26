@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Modules">
+      <UniqueIdentifier>{bb092eba-6bff-43e1-b9eb-551f168c92ca}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CVector.cpp">
@@ -22,16 +25,22 @@
     <ClCompile Include="CBody.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BodyType.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CVector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CConstants.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CBody.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BodyType.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="CConstants.h">
+      <Filter>Modules</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
