@@ -33,14 +33,19 @@ namespace Comet
 
     void CSim::Update()
     {
+        SnapShot();
+
         //Update Body positions
         UpdatePositions();
 
-        //Update the distances between bodies
-        UpdateDistances();
-
         //Update forces
         UpdateForces();
+
+    }
+
+    void CSim::SnapShot()
+    {
+        
     }
 
     void CSim::UpdatePositions()
@@ -50,20 +55,6 @@ namespace Comet
 
     void CSim::UpdateDistances()
     {
-        for (std::pair<std::string, CBody> bodyOne : bodyRegistry_)
-        {
-            for (std::pair<std::string, CBody> bodyTwo : bodyRegistry_)
-            {
-                if (bodyOne.second != bodyTwo.second && !distanceRegistry_.contains({ bodyOne.second, bodyTwo.second })
-                    && !distanceRegistry_.contains({ bodyTwo.second, bodyOne.second }))
-                {
-                    double distanceBetweenBodies = Distance(bodyOne.second.GetPosition(), bodyTwo.second.GetPosition());
-                    distanceRegistry_.insert({ { bodyOne.second, bodyTwo.second }, distanceBetweenBodies });
-                    
-                }
-            }
-        }
-
 
     }
 

@@ -20,26 +20,25 @@ int main()
     CBody object7("Leviathan");
     CBody object8("Echidna", BodyType::Moon);
 
-    CSim Genesis;
+    CSim LunaSystem;
 
-    Genesis.AddBody(object0);
-    Genesis.AddBody(object1);
-    Genesis.AddBody(object2);
-    Genesis.AddBody(object3);
-    Genesis.AddBody(object4);
-    Genesis.AddBody(object5);
-    Genesis.AddBody(object6);
-    Genesis.AddBody(object7);
-    Genesis.AddBody(object8);
+    LunaSystem.AddBody(object0);
+    LunaSystem.AddBody(object1);
+    LunaSystem.AddBody(object2);
+    LunaSystem.AddBody(object3);
+    LunaSystem.AddBody(object4);
+    LunaSystem.AddBody(object5);
+    LunaSystem.AddBody(object6);
+    LunaSystem.AddBody(object7);
+    LunaSystem.AddBody(object8);
 
-    std::cout << Genesis.ToString() << "\n";
+    std::cout << LunaSystem.ToString() << "\n";
 
+    LunaSystem.RemoveBody(object3);
+    LunaSystem.RemoveBody(object4);
+    LunaSystem.RemoveBody(object5);
 
-    Genesis.RemoveBody(object3);
-    Genesis.RemoveBody(object4);
-    Genesis.RemoveBody(object5);
-
-    std::cout << Genesis.ToString();
+    std::cout << LunaSystem.ToString();
 
 
     

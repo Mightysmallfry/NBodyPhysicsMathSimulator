@@ -34,6 +34,7 @@ namespace Comet
 
         //A good way of updating might be a graph/dikstra's method
         void Update();
+        void SnapShot();
         void UpdatePositions();
         void UpdateDistances();
         void UpdateForces();
